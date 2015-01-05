@@ -22,7 +22,8 @@ while int(range1) < int(range2):
     total = str(triplet) + str(range1)
     iplist.append(total)
 print iplist
-p = subprocess.Popen(["ping", "-c 1", "-W .2", "17.212.16.2"], stdout=subprocess.PIPE)
-line = p.communicate()
-# print(line)
+for i in iplist:
+    p = subprocess.Popen(["ping", "-c 1", "-W .2", i], stdout=subprocess.PIPE)
+    line = p.communicate()
+    print(line)
 
